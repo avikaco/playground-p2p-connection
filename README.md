@@ -2,12 +2,15 @@
 
 P2P Bridge adalah aplikasi web sederhana namun kuat yang memungkinkan koneksi langsung antar browser (Peer-to-Peer) menggunakan teknologi WebRTC. Proyek ini dirancang khusus untuk bekerja tanpa memerlukan signaling server pusat, sehingga ideal untuk lingkungan offline atau privasi tingkat tinggi.
 
+> [!NOTE]
+> Note: P2P connection hanya bisa terjadi di protokol HTTPS dan localhost.
+
 ## Fitur Utama
 
 *   **Koneksi Langsung (Direct P2P):** Komunikasi data langsung antar browser tanpa melalui server perantara.
 *   **Signaling Manual:** Pertukaran kunci koneksi secara manual (copy-paste) untuk keamanan maksimal.
 *   **Desain Premium:** Menggunakan estetika modern dengan *glassmorphism*, mode gelap, dan animasi yang halus.
-*   **Responsif & Ringan:** Dibuat dengan HTML, CSS, dan JavaScript/TypeScript murni tanpa dependensi berat.
+*   **Responsif & Ringan:** Dibuat dengan HTML, CSS, dan JavaScript murni tanpa dependensi berat.
 *   **Keamanan:** Data dikirimkan secara terenkripsi melalui WebRTC Data Channel.
 
 ## Cara Penggunaan
@@ -34,7 +37,7 @@ Proses koneksi melibatkan dua pihak: **Host** dan **Joiner**.
 
 *   **WebRTC:** Protokol utama untuk komunikasi peer-to-peer.
 *   **HTML5 & CSS3:** Untuk struktur dan styling (termasuk CSS Variables dan Animations).
-*   **TypeScript/JavaScript:** Logika aplikasi dan manajemen state koneksi.
+*   **JavaScript:** Logika aplikasi dan manajemen state koneksi.
 *   **Manual Signaling:** Metode pertukaran SDP (Session Description Protocol) secara manual melalui Base64.
 
 ## Pengembangan
@@ -43,7 +46,6 @@ Jika Anda ingin memodifikasi proyek ini:
 
 *   `index.html`: Struktur antarmuka pengguna.
 *   `style.css`: Semua styling dan desain visual.
-*   `main.ts`: Logika inti menggunakan TypeScript.
 *   `main.js`: Versi JavaScript yang dikompilasi untuk runtime browser.
 
 ---
