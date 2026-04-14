@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>P2P Bridge | Secure Offline Connection</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      <header>
+        <h1>P2P Bridge</h1>
+        <p class="subtitle">
+          Direct browser-to-browser connection (No Internet Required)
+        </p>
+      </header>
+
+      <main id="setup-screen">
+        <div class="role-selector">
+          <button id="host-btn" class="primary-btn">Host a Connection</button>
+          <button id="join-btn" class="secondary-btn">Join a Connection</button>
+        </div>
+
+        <div id="bridge-section" class="hidden">
+          <div id="host-controls" class="hidden">
+            <h3>1. Share this Key with your Peer</h3>
+            <div class="copy-box">
+              <textarea
+                id="host-key"
+                readonly
+                placeholder="Generating key..."
+              ></textarea>
+              <button id="copy-host-key-btn">Copy Key</button>
+            </div>
+            <h3>2. Paste the Peer's Answer Key here</h3>
+            <div class="paste-box">
+              <textarea
+                id="host-answer-input"
+                placeholder="Paste response key here..."
+              ></textarea>
+              <button id="final-connect-btn">Finalize Connection</button>
+            </div>
+          </div>
+
+          <div id="join-controls" class="hidden">
+            <h3>1. Paste the Host's Key here</h3>
+            <div class="paste-box">
+              <textarea
+                id="join-offer-input"
+                placeholder="Paste host key here..."
+              ></textarea>
+              <button id="create-answer-btn">Accept & Generate Answer</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="status-display" class="status-bar">
+          <span class="indicator"></span>
+          <span id="status-text">Disconnected</span>
+        </div>
+      </main>
+
+      <section id="chat-screen" class="hidden">
+        <div class="chat-header">
+          <span class="peer-name">Connected Peer</span>
+          <button id="disconnect-btn">Disconnect</button>
+        </div>
+        <div id="message-list" class="message-list">
+          <!-- Messages will appear here -->
+        </div>
+        <form id="message-form" class="message-input-area">
+          <input
+            type="text"
+            id="message-input"
+            placeholder="Type a message..."
+            autocomplete="off"
+          />
+          <button type="submit" id="send-btn">Send</button>
+        </form>
+      </section>
+    </div>
+    <!-- The answer section is now a modal -->
+    <div id="join-modal" class="modal-overlay hidden">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Peer Answer Key</h3>
+          <button id="close-modal-btn">&times;</button>
+        </div>
+        <p class="modal-tip">
+          Give this code back to the Host to establish the bridge.
+        </p>
+        <div class="copy-box">
+          <textarea
+            id="join-answer-key"
+            readonly
+            placeholder="Generating answer..."
+          ></textarea>
+          <button id="copy-join-key-btn" class="primary-btn">
+            Copy & Send to Peer
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- We link main.js for runtime execution -->
+    <script src="main.js" type="module"></script>
+  </body>
+</html>
